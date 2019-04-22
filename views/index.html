@@ -1,0 +1,49 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: http://mozilla.github.io/nunjucks/ -->
+<!-- jade: http://jade-lang.com/ -->
+<!-- haml: http://haml.info/tutorial.html -->
+<!-- hbs(handlebars): http://handlebarsjs.com/expressions.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise Log</title>
+    <meta name="description" content="A warm thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://gomix.com/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/style.css">
+  </head>
+  <body>
+    <header>
+      <h4>
+        Exercise Log.
+      </h4>
+    </header>
+
+    <main>
+      <form action="api/exercise/new-user" method="POST">
+        <input type="text" placeholder="username" name="name" value="">
+        <input type="submit" value="Add User">
+      </form>
+      <form action="api/exercise/add" method="POST">
+        <input type="text" placeholder="userId*" name="user_id">
+        <input type="text" placeholder="description*" name="description">
+        <input type="text" placeholder="duration(minutes)*" name="duration">
+        <input type="text" placeholder="date (yyyy-mm-dd)" name="date">
+        <input type="submit" value="Post URL">
+      </form>
+    </main>
+GET /api/exercise/log?{userId}[&from][&to][&limit]
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+<!--     <script src="/public/client2.js"></script> -->
+
+  </body>
+</html>
